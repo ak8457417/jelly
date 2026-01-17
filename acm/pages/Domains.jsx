@@ -24,6 +24,23 @@ const Card = ({ domain }) => {
             ">
                 {domain}
             </p>
+
+            {/* Gradient below each card */}
+            <div 
+                className="pointer-events-none absolute z-0 
+                    w-[360px] h-[56px]
+                    sm:w-[440px] sm:h-[68px]
+                    md:w-[510px] md:h-[79px]
+                    lg:w-[580px] lg:h-[90px]
+                    top-[200px] left-[-40px]
+                    sm:top-[310px] sm:left-[-50px]
+                    md:top-[330px] md:left-[-58px]
+                    lg:top-[340px] lg:left-[-65px]"
+                style={{
+                    opacity: 1,
+                    background: 'radial-gradient(37.26% 37.26% at 50% 50%, rgba(255, 169, 41, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%)'
+                }}
+            />
         </div>
     );
 };

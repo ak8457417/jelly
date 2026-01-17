@@ -20,6 +20,15 @@ const AboutVIT = () => {
             {/* Radial gradient for the container to give a faded look */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
 
+            {/* Custom radial gradient overlay */}
+            <div 
+                className="pointer-events-none absolute z-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] lg:w-[1044px] lg:h-[1057px] top-[200px] right-[-150px] sm:top-[300px] sm:right-[-250px] md:top-[400px] md:right-[-350px] lg:top-[-10px] lg:right-[-600px]"
+                style={{
+                    opacity: 1,
+                    background: 'radial-gradient(37.26% 37.26% at 50% 50%, rgba(255, 169, 41, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%)'
+                }}
+            />
+
             {/* Left Robot */}
             <div className="mb-8 lg:mb-0 lg:ml-[-70px] flex items-center justify-center lg:justify-start z-10">
                 <Image

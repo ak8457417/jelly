@@ -20,6 +20,14 @@ const AboutACM = () => {
             {/* Radial gradient for the container to give a faded look */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
 
+            {/* Custom radial gradient overlay */}
+            <div 
+                className="pointer-events-none absolute z-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] lg:w-[1044px] lg:h-[1057px] top-[200px] left-[-150px] sm:top-[300px] sm:left-[-250px] md:top-[400px] md:left-[-350px] lg:top-[-10px] lg:left-[-600px]"
+                style={{
+                    opacity: 1,
+                    background: 'radial-gradient(37.26% 37.26% at 50% 50%, rgba(255, 169, 41, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%)'
+                }}
+            />
 
             {/* Left ACM - touching boundary */}
             <div className="hidden md:block absolute left-4 md:left-12 lg:left-24 top-1/2 -translate-y-1/2 z-0">
