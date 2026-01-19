@@ -14,6 +14,18 @@ const Navbar = () => {
         setIsMenuOpen(false);
     };
 
+    const handleSmoothScroll = (e, targetId) => {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        closeMenu();
+    };
+
     return (
         <nav className="relative flex items-center justify-between py-3 sm:py-4 px-4 sm:px-8 md:px-12 z-50">
             <div className="text-lg font-bold">
@@ -22,12 +34,12 @@ const Navbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-4 xl:gap-5">
-                <a href={'#home'} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Home</a>
-                <a href={'#about'} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">About</a>
-                <a href={'#domains'} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Domains</a>
-                <p className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Events</p>
-                <p className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Gallery</p>
-                <p className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Team</p>
+                <a href={'#home'} onClick={(e) => handleSmoothScroll(e, '#home')} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Home</a>
+                <a href={'#about'} onClick={(e) => handleSmoothScroll(e, '#about')} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">About</a>
+                <a href={'#domains'} onClick={(e) => handleSmoothScroll(e, '#domains')} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Domains</a>
+                <p onClick={(e) => handleSmoothScroll(e, '#events')} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Events</p>
+                <p onClick={(e) => handleSmoothScroll(e, '#gallery')} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Gallery</p>
+                <p onClick={(e) => handleSmoothScroll(e, '#team')} className="text-[18px] xl:text-[22px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors">Team</p>
 
                 <div className="bg-[#EDC531] rounded-[5px] hover:bg-[#DBB42C] transition-colors">
                     <p className="text-[20px] xl:text-[25px] font-bold text-black px-3 xl:px-4 py-2 cursor-pointer">
@@ -68,39 +80,39 @@ const Navbar = () => {
                 <div className="flex flex-col items-center justify-center h-full gap-8">
                     <a 
                         href={'#home'} 
-                        onClick={closeMenu}
+                        onClick={(e) => handleSmoothScroll(e, '#home')}
                         className="text-[24px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors"
                     >
                         Home
                     </a>
                     <a 
                         href={'#about'} 
-                        onClick={closeMenu}
+                        onClick={(e) => handleSmoothScroll(e, '#about')}
                         className="text-[24px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors"
                     >
                         About
                     </a>
                     <a 
                         href={'#domains'} 
-                        onClick={closeMenu}
+                        onClick={(e) => handleSmoothScroll(e, '#domains')}
                         className="text-[24px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors"
                     >
                         Domains
                     </a>
                     <p 
-                        onClick={closeMenu}
+                        onClick={(e) => handleSmoothScroll(e, '#events')}
                         className="text-[24px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors"
                     >
                         Events
                     </p>
                     <p 
-                        onClick={closeMenu}
+                        onClick={(e) => handleSmoothScroll(e, '#gallery')}
                         className="text-[24px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors"
                     >
                         Gallery
                     </p>
                     <p 
-                        onClick={closeMenu}
+                        onClick={(e) => handleSmoothScroll(e, '#team')}
                         className="text-[24px] font-bold cursor-pointer hover:text-[#A47E1B] transition-colors"
                     >
                         Team

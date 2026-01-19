@@ -4,6 +4,7 @@ import AboutVIT from "@/pages/AboutVIT";
 import AboutACM from "@/pages/AboutACM";
 import Domains from "@/pages/Domains";
 import Footer from "@/components/Footer";
+import OurEvents from "@/pages/OurEvents";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <AboutVIT />
         <AboutACM />
       <Domains />
+      <OurEvents />
         <Footer />
     </div>
   );
