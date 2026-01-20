@@ -6,6 +6,7 @@ import Domains from "@/pages/Domains";
 import Footer from "@/components/Footer";
 import OurEvents from "@/pages/OurEvents";
 import Gallery from "@/pages/Gallery";
+import TeamPage from "@/pages/TeamPage";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Domains />
       <OurEvents />
       <Gallery/>
+      <TeamPage/>
         <Footer />
     </div>
   );
