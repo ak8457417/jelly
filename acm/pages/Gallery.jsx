@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Title from '@/components/Title';
 
 const Gallery = () => {
   const galleryImages = [
@@ -16,31 +17,26 @@ const Gallery = () => {
   ];
 
   return (
-    <section className="w-full min-h-[823px] bg-black px-[20px] md:px-[100px] py-[80px] box-border">
-      <div className="relative flex justify-center mb-[80px]">
-        <img
-          src="/assets/decor.png" 
-          alt="decor"
-          className="absolute -top-[45px] left-45 -translate-x-1/2 w-[114px] h-auto z-20 pointer-events-none"
-        />
-        <h1 className="text-white text-center font-extrabold text-[40px] md:text-[93px] leading-[100%] tracking-[-2px] font-inter z-10">
-          Explore Our Gallery
-        </h1>
-      </div>
+    <section className="w-full min-h-screen bg-black px-5 md:px-[100px] py-20 box-border">
+      {/* Header Container */}
+      <div className="relative z-10 flex justify-center mb-10 sm:mb-14 md:mb-16">
+                <Title title={"Explore Our Gallery"} />
+            </div>
 
-      <div className="max-h-[800px] overflow-y-auto pr-4 custom-scrollbar">
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-[30px] space-y-[30px]">
+      {/* Gallery Grid */}
+      <div className="max-h-[800px] overflow-y-auto pr-2 md:pr-4 custom-scrollbar">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {galleryImages.map((image, index) => (
             <div
               key={index}
-              className={`relative w-full ${image.height} bg-yellow-400 rounded-[18px] overflow-hidden break-inside-avoid transition-transform hover:scale-[1.02] duration-300`}
+              className={`relative w-full ${image.height} bg-[#fad643] rounded-2xl overflow-hidden break-inside-avoid transition-all hover:scale-[1.01] duration-300`}
             >
               <img 
                 src={image.src} 
                 alt={`Gallery item ${index}`}
                 loading="lazy"
                 className="w-full h-full object-cover" 
-                onError={(e) => { e.target.style.display = 'none'; }}
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </div>
           ))}
@@ -49,7 +45,7 @@ const Gallery = () => {
 
       <style jsx>{`
         .custom-scrollbar::-webkit-scrollbar {
-          width: 8px;
+          width: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
           background: #000;
@@ -60,7 +56,8 @@ const Gallery = () => {
         }
         .break-inside-avoid {
           break-inside: avoid;
-          display: block;
+          display: inline-block; /* Essential for Masonry layout fixes in some browsers */
+          width: 100%;
         }
       `}</style>
     </section>
